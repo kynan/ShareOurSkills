@@ -1,0 +1,14 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "jade-handlebars": {}
+    },
+    "packages": {
+      "jade-handlebars": {
+        "git": "https://github.com/SimonDegraeve/meteor-jade-handlebars.git",
+        "branch": "master"
+      }
+    }
+  }
+}
