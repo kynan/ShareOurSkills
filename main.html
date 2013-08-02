@@ -127,41 +127,48 @@
 
                       <div class="form-group">
                           <label for="exampleInputEmail">What are you looking for?</label>
+                          {{#each LookingFor}}
                           <div class="checkbox">
                               <label>
-                                  <input type="checkbox" value="">
-                                  Option one is this and that&mdash;be sure to include why it's great
+                                  <input type="checkbox" name="" value="{{this}}">
+                                  {{this}}
                               </label>
                           </div>
+                          {{/each}}
                       </div>
 
                       <div class="form-group">
                           <label for="exampleInputEmail">What are you interested in?</label>
+                          {{#each InterestedIn}}
                           <div class="checkbox">
                               <label>
-                                  <input type="checkbox" value="">
-                                  Option one is this and that&mdash;be sure to include why it's great
+                                  <input type="checkbox" name="" value="{{this}}">
+                                  {{this}}
                               </label>
                           </div>
-
+                          {{/each}}
                       </div>
                       <div class="form-group">
                           <label for="exampleInputEmail">What stops you from doing what you want?</label>
+                          {{#each StopsYou}}
                           <div class="checkbox">
                               <label>
-                                  <input type="checkbox" value="">
-                                  Option one is this and that&mdash;be sure to include why it's great
+                                  <input type="checkbox" name="" value="{{this}}">
+                                  {{this}}
                               </label>
                           </div>
+                          {{/each}}
                       </div>
                       <div class="form-group">
                           <label for="exampleInputEmail">Where are you willing to travel?</label>
+                          {{#each Travel}}
                           <div class="checkbox">
                               <label>
-                                  <input type="checkbox" value="">
-                                  Option one is this and that&mdash;be sure to include why it's great
+                                  <input type="checkbox" name="" value="{{this}}">
+                                  {{this}}
                               </label>
                           </div>
+                          {{/each}}
                       </div>
                   </fieldset>
 
