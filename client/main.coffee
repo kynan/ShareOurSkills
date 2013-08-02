@@ -68,26 +68,15 @@ Template.userprofile.Travel = () -> [
     'Outside of Cardiff'
 ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Template.createProject.events =
+  'click button.submit': (evt, template) ->
+    # Prevent form from being submitted
+    evt.preventDefault()
+    project =
+      title: template.find('#projectTitle').value
+      description: template.find('#projectDescription').value
+      image: template.find('#projectImage').value
+    console.log project
+    Projects.insert project, (err, id) ->
+      console.log err if err?
+      console.log "Created project with id #{id}" unless err?
