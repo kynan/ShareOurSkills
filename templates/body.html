@@ -1,0 +1,30 @@
+<template name="body">
+  <div class="container">
+
+    <div class="col-8">
+      <h1>Share Our Skills</h1>
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Projects</h3>
+          <a data-toggle="modal" href="#createProject" class="btn btn-primary">Create Project</a>
+          {{> createProject}}
+        </div>
+        {{> projects}}
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">My profile</h3>
+        </div>
+        {{#if currentUser}}
+          {{> userprofile}}
+        {{else}}
+          {{loginButtons align=right}}
+        {{/if}}
+      </div>
+    </div>
+
+  </div>
+</template>

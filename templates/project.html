@@ -1,0 +1,15 @@
+<template name="projects">
+<ul class="media-list">
+{{#each projects}}
+  <li class="media">
+    <a class="pull-left" href="#">
+      <img class="media-object" src="{{image}}">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">{{title}}</h4>
+      {{description}}
+    </div>
+  </li>
+{{/each}}
+</ul>
+</template>
