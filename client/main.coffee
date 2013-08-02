@@ -68,6 +68,18 @@ Template.userprofile.Travel = () -> [
     'Outside of Cardiff'
 ]
 
+Template.userprofile.rendered = () ->
+  check = (e) -> e.checked = true
+  profile = Meteor.user().profile
+  if profile.goals?
+    check e for e in this.findAll('.goals') when e.value in profile.goals
+  if profile.interests?
+    check e for e in this.findAll('.interests') when e.value in profile.interests
+  if profile.barriers?
+    check e for e in this.findAll('.barriers') when e.value in profile.barriers
+  if profile.travel?
+    check e for e in this.findAll('.travel') when e.value in profile.travel
+
 Template.userprofile.events =
   'click button.submit': (evt, template) ->
     profile =
@@ -75,6 +87,7 @@ Template.userprofile.events =
       'profile.goals': (e.value for e in template.findAll('.goals') when e.checked)
       'profile.interests': (e.value for e in template.findAll('.interests') when e.checked)
       'profile.barriers': (e.value for e in template.findAll('.barriers') when e.checked)
+      'profile.travel': (e.value for e in template.findAll('.travel') when e.checked)
     console.log profile
     Meteor.users.update Meteor.userId(), $set: profile, (err) ->
       console.log err if err?
