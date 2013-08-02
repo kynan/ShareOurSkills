@@ -99,7 +99,7 @@ Template.createProject.events =
     project =
       title: template.find('#projectTitle').value
       description: template.find('#projectDescription').value
-      image: template.find('#projectImage').value
+      image: template.find('#projectImage').value or 'http://www.luckyicon.com/pictures/webasyst/project-manager.gif'
       createdAt: Date.now()
     console.log project
     Projects.insert project, (err, id) ->
