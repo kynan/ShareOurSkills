@@ -100,9 +100,13 @@ Template.createProject.events =
       title: template.find('#projectTitle').value
       description: template.find('#projectDescription').value
       image: template.find('#projectImage').value
+      createdAt: Date.now()
     console.log project
     Projects.insert project, (err, id) ->
       console.log err if err?
       console.log "Created project with id #{id}" unless err?
 Template.projects.projects = () ->
-  Projects.find()
+  Projects.find({}, {sort: {createdAt: -1}})
+
+Handlebars.registerHelper "humanized_time", (timestamp) ->
+  humanized_time_span timestamp
