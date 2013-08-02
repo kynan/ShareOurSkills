@@ -22,21 +22,16 @@
             <fieldset>
 
               <div class="form-group">
-                <label for="exampleInputEmail">Name</label>
-                <input type="text" class="form-control" id="exampleName" placeholder="Your Name">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" id="age" placeholder="Your Age" value="{{profile.age}}">
               </div>
 
               <div class="form-group">
-                <label for="exampleInputEmail">Age</label>
-                <input type="text" class="form-control" id="exampleAge" placeholder="Your Age">
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail">What are you looking for?</label>
+                <label>What are you looking for?</label>
                 {{#each LookingFor}}
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="" value="{{this}}">
+                    <input type="checkbox" name="goals" value="{{this}}">
                     {{this}}
                   </label>
                 </div>
@@ -44,33 +39,33 @@
               </div>
 
               <div class="form-group">
-                <label for="exampleInputEmail">What are you interested in?</label>
+                <label>What are you interested in?</label>
                 {{#each InterestedIn}}
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="" value="{{this}}">
+                    <input type="checkbox" name="interests" value="{{this}}">
                     {{this}}
                   </label>
                 </div>
                 {{/each}}
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail">What stops you from doing what you want?</label>
+                <label>What stops you from doing what you want?</label>
                 {{#each StopsYou}}
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="" value="{{this}}">
+                    <input type="checkbox" name="barriers" value="{{this}}">
                     {{this}}
                   </label>
                 </div>
                 {{/each}}
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail">Where are you willing to travel?</label>
+                <label>Where are you willing to travel?</label>
                 {{#each Travel}}
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="" value="{{this}}">
+                    <input type="checkbox" name="travel" value="{{this}}">
                     {{this}}
                   </label>
                 </div>
@@ -81,7 +76,7 @@
           </div>
           <div class="modal-footer">
             <a data-dismiss="modal" class="btn">Close</a>
-            <a href="#" class="btn btn-primary">Save changes</a>
+            <button data-dismiss="modal" class="btn btn-primary submit">Save changes</button>
           </div>
         </form>
       </div><!-- /.modal-content -->
