@@ -44,9 +44,10 @@
         <div class="panel-heading">
           <h3 class="panel-title">My profile</h3>
         </div>
-        {{loginButtons align=right}}
         {{#if currentUser}}
           {{> userprofile}}
+        {{else}}
+          {{loginButtons align=right}}
         {{/if}}
       </div>
     </div>
@@ -92,8 +93,15 @@
 </template>
 
 <template name="userprofile">
-  <img src="http://graph.facebook.com/{{profile.id}}/picture">
-  <a data-toggle="modal" href="#myModal" class="btn btn-primary">Edit Profile</a>
+  <div class="media">
+    <a class="pull-left" href="https://facebook.com/{{profile.id}}" target="_blank">
+      <img class="media-object" src="http://graph.facebook.com/{{profile.id}}/picture">
+    </a>
+    <div class="media-body">
+      {{loginButtons align=right}}
+      <a data-toggle="modal" href="#myModal" class="btn btn-primary">Edit Profile</a>
+    </div>
+  </div>
   <!-- Modal -->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
