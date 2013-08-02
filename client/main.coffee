@@ -68,6 +68,17 @@ Template.userprofile.Travel = () -> [
     'Outside of Cardiff'
 ]
 
+Template.userprofile.events =
+  'click button.submit': (evt, template) ->
+    profile =
+      'profile.age': template.find('#age').value
+      'profile.goals': (e.value for e in template.findAll('.goals') when e.checked)
+      'profile.interests': (e.value for e in template.findAll('.interests') when e.checked)
+      'profile.barriers': (e.value for e in template.findAll('.barriers') when e.checked)
+    console.log profile
+    Meteor.users.update Meteor.userId(), $set: profile, (err) ->
+      console.log err if err?
+
 Template.createProject.events =
   'click button.submit': (evt, template) ->
     # Prevent form from being submitted
