@@ -80,3 +80,5 @@ Template.createProject.events =
     Projects.insert project, (err, id) ->
       console.log err if err?
       console.log "Created project with id #{id}" unless err?
+Template.projects.projects = () ->
+  Projects.find()
